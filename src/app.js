@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/js/all';
 import { Modal, Collapse } from 'bootstrap';
-import { CalorieTracker } from './Tracker';
+import CalorieTracker from './Tracker';
 import { Meal, Workout } from './Item';
 
 import './css/bootstrap.css';
@@ -71,7 +71,7 @@ class App {
     calories.value = '';
 
     const collapseItem = document.getElementById(`collapse-${type}`);
-    const bsCollapse = new bootstrap.Collapse(collapseItem, { toggle: true });
+    const bsCollapse = new Collapse(collapseItem, { toggle: true });
   }
 
   _removeItem(type, e) {
@@ -126,7 +126,7 @@ class App {
     limit.value = '';
 
     const modalEl = document.getElementById('limit-modal');
-    const modal = bootstrap.Modal.getInstance(modalEl);
+    const modal = Modal.getInstance(modalEl);
     modal.hide();
   }
 }
